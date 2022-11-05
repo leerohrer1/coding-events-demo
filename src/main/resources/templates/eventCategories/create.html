@@ -5,9 +5,17 @@
 
 <header th:replace="fragments :: header"></header>
 
-<form id="form">
-  <label>Event Categories: <input type="text" name="eventCategory" /></label>
-  <button type="submit">Submit form</button>
+<form method="post">
+  <div class="form-group">
+    <label>Event Category
+      <input th:field="${eventCategory.name}" class="form-control">
+    </label>
+    <p class="error" th:errors="${eventCatefory.name}"></p>
+  </div>
+
+  <div class="form-group">
+    <input type="submit" value="Create" class="btn btn-success">
+  </div>
 </form>
 
 
